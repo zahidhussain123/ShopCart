@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
-  item: [],
+  items: [],
   status: null,
 };
 export const productsFetch = createAsyncThunk(
@@ -21,7 +21,7 @@ export const productsSlice = createSlice({
   reducers: {},
   extraReducers: {
     [productsFetch.pending]: (state, action) => {
-      state.state = "pending";
+      state.status = "pending";
     },
 
     [productsFetch.fulfilled]: (state, action) => {
